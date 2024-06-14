@@ -21,3 +21,19 @@ func CustomUserConvertor(user database.User) CustomUser {
 		ProfilePic: user.ProfilePicture.String,
 	}
 }
+
+type CustomSong struct {
+	Name     string    `json:"name"`
+	SongLink string    `json:"song_link"`
+	Id       uuid.UUID `json:"id"`
+	UserID   uuid.UUID `json:"user_id"`
+}
+
+func CustomSongConvertor(song database.Song) CustomSong {
+	return CustomSong{
+		Name:     song.Name,
+		SongLink: song.SongLink,
+		Id:       song.ID,
+		UserID:   song.UserID,
+	}
+}

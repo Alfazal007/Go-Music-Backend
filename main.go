@@ -62,7 +62,9 @@ func main() {
 		MaxAge:           300, // Maximum value not ignored by any of major browsers
 	}))
 	userRouter := router.UserRouter(&apiCfg)
+	songRouter := router.SongRouter(&apiCfg)
 	r.Mount("/user", userRouter)
+	r.Mount("/song", songRouter)
 	srv := &http.Server{
 		Addr:    ":" + portNumber,
 		Handler: r,

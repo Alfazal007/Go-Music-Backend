@@ -16,7 +16,5 @@ func (apiCfg *ApiConfig) cloudinarUploader(r *http.Request, fileName string) (st
 		return "", errors.New("Error uploading to cloudinary")
 	}
 
-	// Print the URL of the uploaded file
-	fmt.Println(uploadResult.SecureURL)
 	return uploadResult.SecureURL, nil
 }
